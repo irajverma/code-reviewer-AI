@@ -21,18 +21,18 @@ function App() {
     prism.highlightAll()
   }, [])
 
-  async function reviewCode() {
-    setLoading(true) // Start loading
-    try {
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code })
-      setReview(response.data)
-    } catch (err) {
-      setReview("### ❌ Error\nFailed to connect to the AI service. Please check if the server is running.")
-    } finally {
-      setLoading(false) // End loading
-    }
+async function reviewCode() {
+  setLoading(true);
+  try {
+    // Replace localhost with your new Render URL
+    const response = await axios.post('https://code-reviewer-ai-3sxh.onrender.com/ai/get-review', { code });
+    setReview(response.data);
+  } catch (err) {
+    setReview("### ❌ Error\nFailed to connect to the AI service.");
+  } finally {
+    setLoading(false);
   }
-
+}
   return (
     <main>
       <div className="left">
