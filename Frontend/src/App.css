@@ -110,3 +110,20 @@ main {
   padding: 2rem;
   overflow-y: auto;
 }
+
+/* Update this in App.css */
+main .right {
+  height: 100%;
+  overflow-y: auto; /* Enables the vertical scrollbar */
+  padding: 1.5rem;
+  background-color: #1e1e26;
+  border-radius: 0.7rem;
+}
+
+/* Ensure the AI's code blocks don't overflow horizontally */
+.right pre {
+  max-width: 100%;
+  overflow-x: auto; 
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
